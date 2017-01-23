@@ -35,6 +35,7 @@ router.get("/index",function(req,res){
 // include model/main
 require('./model/main')(app);
 require('./model/searchdocs')(app);
+require('./model/tt')(app,router);
 
 //require('./model/main')(app,router);
 
