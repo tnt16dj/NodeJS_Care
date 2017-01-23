@@ -16,8 +16,8 @@ module.exports = function(app)
           provider_first_name: 'John',
           provider_npi: '0123456789',
           member_id: 'cost_estimates_001',
-          member_first_name: 'IDA',
-          member_last_name: 'FRANKLIN',
+          member_first_name: 'Todd',
+          member_last_name: 'Tkach',
           member_dob: '1701-12-12',
           service_type: '30',
         })
