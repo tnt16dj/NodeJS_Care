@@ -15,7 +15,7 @@ module.exports = function(app)
           provider_last_name: 'Doe',
           provider_first_name: 'John',
           provider_npi: '0123456789',
-          member_id: 'cost_estimates_001',
+          member_id: 'AETNA00AMPPPO',
           member_first_name: 'Todd',
           member_last_name: 'Tkach',
           member_dob: '1701-12-12',
