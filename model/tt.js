@@ -31,4 +31,23 @@ module.exports = function(app)
         });
         
     })
+
+
+    app.get('/CostEstimate',function(req,res) {
+
+        eligible.Coverage.costEstimates({
+          provider_npi: '0123456789',
+          provider_price: '1500.50',
+          service_type: '1',
+          network: 'IN',
+        })
+        .then(function(costEstimates) {
+          console.log(costEstimates);
+        })
+        .catch(function(e) {
+          //
+        });
+
+    })
+
 }
