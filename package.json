@@ -11,8 +11,8 @@
     "eligible-node": "latest",
     "express": "latest",
     "express-basic-auth": "latest",
-    "jsdom" : "^4.0.5",
-    "jquery": "^4.0.5",
+    "jsdom" : "latest",
+    "jquery": "latest",
     "multer": "latest",
     "node-stringify": "0.0.19",
     "pokitdok-nodejs": "0.0.11"
