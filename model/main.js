@@ -26,27 +26,4 @@ module.exports = function(app)
     });
 */
 
-    app.get('/CoverageAll',function(req,res) {
-
-        eligible.Coverage.all({
-          payer_id: '00001',
-          provider_last_name: 'Doe',
-          provider_first_name: 'John',
-          provider_npi: '0123456789',
-          member_id: 'AETNA00DEP_ACPOSII',
-          member_first_name: 'IDA',
-          member_last_name: 'FRANKLIN',
-          member_dob: '1701-12-12',
-          service_type: '30',
-        })
-        .then(function(coverage) {
-          console.log(coverage);
-          res.send(coverage);
-        })
-        .catch(function(e) {
-          //
-          alert('error in coverage call');
-        });
-        
-    })
 }
