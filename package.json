@@ -1,0 +1,20 @@
+{
+  "name": "pnccare",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node Server.js"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "cookie-parser": "latest",
+    "ejs": "latest",
+    "eligible-node": "latest",
+    "express": "latest",
+    "express-basic-auth": "latest",
+    "jQuery": "^1.7.4",
+    "jquery": "^3.1.1",
+    "multer": "latest",
+    "node-stringify": "0.0.19",
+    "pokitdok-nodejs": "0.0.11"
+  }
+}
