@@ -41,7 +41,7 @@ module.exports = function(app)
         eligible.Coverage.costEstimates({
           provider_npi: '0123456789',
           provider_price: '1500.50',
-          service_type: '1',
+          service_type: '98',
           network: 'IN',
           level: 'INDIVIDUAL',
           payer_id: '00001',
