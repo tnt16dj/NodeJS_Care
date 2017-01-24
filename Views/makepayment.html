@@ -16,17 +16,6 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
-    <!-- References -->
-    <link href="https://coverage-js.eligible.com/css/bootstrap.min.css" rel="stylesheet">
-	<link href="https://coverage-js.eligible.com/css/cupertino/jquery-ui-1.10.3.custom.min.css" rel="stylesheet">
-	<link href="https://coverage-js.eligible.com/css/sample_1.css" rel="stylesheet">
-	<script src="https://coverage-js.eligible.com/js/lib/jquery-1.10.2.min.js"></script>
-	<script src="https://coverage-js.eligible.com/js/lib/jquery-ui-1.10.3.custom.min.js"></script>
-	<script src="https://coverage-js.eligible.com/js/lib/bootstrap.min.js"></script>
-	<script src="https://eligible.com/js/coverage.min.js"></script>
-	<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
-	<script src="/js/script.js"></script>
 	
 	 <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -217,7 +206,7 @@
 
         <div id="page-wrapper">
 
-            <div class="container" style="margin-top: 75px">
+            <div class="container-fluid" style="margin-top: 75px">
 
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -229,60 +218,41 @@
                                     <table class="table table-bordered table-hover table-striped">
                                         <thead>
                                             <tr>
-                                                <th>Order #</th>
+                                                <th>Invoice #</th>
                                                 <th>Order Date</th>
                                                 <th>Order Time</th>
                                                 <th>Amount (USD)</th>
+                                                <td>Make Payment</td>
                                             </tr>
                                         </thead>
                                         <tbody>
-                                            <tr>
-                                                <td>3326</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:29 PM</td>
-                                                <td>$321.33</td>
+                                            <tr id='3326'>
+                                                <td id='invoiceNum'>3326</td>
+                                                <td id='invoiceDate'>10/21/2013</td>
+                                                <td id='invoiceTime'>3:29 PM</td>
+                                                <td id='invoiceAmt'>$75.50</td>
+                                                <td><button data-id='3326' data-toggle='modal' data-target='#myModal' class='payBill btn btn-default' >Pay Bill</button></td>
                                             </tr>
-                                            <tr>
-                                                <td>3325</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:20 PM</td>
-                                                <td>$234.34</td>
+                                            <tr id='3325'>
+                                                <td id='invoiceNum'>3325</td>
+                                                <td id='invoiceDate'>10/21/2013</td>
+                                                <td id='invoiceTime'>3:20 PM</td>
+                                                <td id='invoiceAmt'>238.50</td>
+                                                <td><button data-id='3325' data-toggle='modal' data-target='#myModal' class='payBill btn btn-default' >Pay Bill</button></td>
                                             </tr>
-                                            <tr>
-                                                <td>3324</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:03 PM</td>
-                                                <td>$724.17</td>
+                                            <tr id='3324'>
+                                                <td id='invoiceNum'>3324</td>
+                                                <td id='invoiceDate'>10/21/2013</td>
+                                                <td id='invoiceTime'>3:03 PM</td>
+                                                <td id='invoiceAmt'>$724.17</td>
+                                                <td><button data-id='3324' data-toggle='modal' data-target='#myModal' class='payBill btn btn-default' >Pay Bill</button></td>
                                             </tr>
-                                            <tr>
-                                                <td>3323</td>
-                                                <td>10/21/2013</td>
-                                                <td>3:00 PM</td>
-                                                <td>$23.71</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3322</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:49 PM</td>
-                                                <td>$8345.23</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3321</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:23 PM</td>
-                                                <td>$245.12</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3320</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:15 PM</td>
-                                                <td>$5663.54</td>
-                                            </tr>
-                                            <tr>
-                                                <td>3319</td>
-                                                <td>10/21/2013</td>
-                                                <td>2:13 PM</td>
-                                                <td>$943.45</td>
+                                            <tr id='3323'>
+                                                <td id='invoiceNum'>3323</td>
+                                                <td id='invoiceDate'>10/21/2013</td>
+                                                <td id='invoiceTime'>3:00 PM</td>
+                                                <td id='invoiceAmt'>$25.00</td>
+                                               <td><button data-id='3323' data-toggle='modal' data-target='#myModal' class='payBill btn btn-default' >Pay Bill</button></td>
                                             </tr>
                                         </tbody>
                                     </table>
@@ -303,11 +273,34 @@
     </div>
     <!-- /#wrapper -->
 
+    !-- MODAL WINDOW -->
+    <div class='modal fade' id='myModal'>
+        <div class='modal-dialog'>
+            <div class='modal-content'>
+              
+                <div class='modal-header'>
+                    <button type='button' class='close' data-dismiss='modal'>
+                        <span aria-hidden='true'>&times;</span>
+                        <span class='sr-only'>Close</span>
+                    </button> <!-- close button -->
+                    <h4 class='modal-title' id='myModalLabel'><i class='fa fa-money'></i> Pay Bill Online </h4>
+                </div> <!-- modal header -->
+                
+                <div class='modal-body'>
+
+                </div> <!-- modal body -->
+            </div> <!-- modal dialog -->
+        </div> <!-- modal -->
+    </div>
+
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
+
+    <!-- Custom Scripts -->
+    <script src="js/payments.js"></script>
 
 </body>
 
