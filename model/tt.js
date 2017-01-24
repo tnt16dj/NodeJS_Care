@@ -43,6 +43,9 @@ module.exports = function(app)
           provider_price: '1500.50',
           service_type: '1',
           network: 'IN',
+          level: 'INDIVIDUAL',
+          payer_id: '00001',
+          member_id: 'COST_ESTIMATES_001'
         })
         .then(function(costEstimates) {
           console.log(costEstimates);
