@@ -114,7 +114,7 @@ app.post("/signup",urlencodedParser,function(req,res){
 			res.sendFile(path + "index.html");
 		}
 		else {
-			res.sendFile(path + "login.html");
+			res.sendFile(path + "/");
 		}
   
 	
@@ -144,7 +144,7 @@ app.post("/login",urlencodedParser,function(req,res){
 	
 	if(x == 0) {
 		// user not found - send back to login
-		res.sendFile(path + "login.html");
+		res.sendFile(path + "/");
 	}
 	else {
 		// user was found - send back to login
