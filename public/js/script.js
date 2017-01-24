@@ -7,7 +7,7 @@ $(window).load(function(){
         case '/eligiblecoverage':
             getCoverage();
 
-        case '/costestimate':
+        case '/estimatecost':
             getCostEstimate();
 
     }
