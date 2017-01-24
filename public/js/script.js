@@ -6,9 +6,11 @@ $(window).load(function(){
 
         case '/eligiblecoverage':
             getCoverage();
+            break;
 
         case '/estimatecost':
             getCostEstimate();
+            break;
 
     }
 
