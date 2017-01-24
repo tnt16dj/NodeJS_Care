@@ -43,9 +43,11 @@ module.exports = function(app)
         })
         .then(function(costEstimates) {
           console.log(costEstimates);
+          res.sent(costEstimates);
         })
         .catch(function(e) {
           //
+          alert('error in cost estimate call');
         });
 
     })

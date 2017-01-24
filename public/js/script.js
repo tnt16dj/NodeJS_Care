@@ -2,8 +2,11 @@ $(window).load(function(){
 
     $('#jsonAnswer').empty();
 
+    alert(window.location.pathname);
+
     getCoverage(); 
 });
+
 
 function getCoverage() {
     var request = $.ajax({
@@ -43,7 +46,27 @@ function getCoverage() {
         };
 
         buildCoverageHTML(coverage);
-        
+
+    });
+        request.fail(function(jqXHR, textStatus) {
+        alert( "Request failed: " + textStatus );
+    });
+
+}
+
+
+
+function getCostEstimate() {
+    var request = $.ajax({
+        url: '/CostEstimate',
+        type: "GET",
+        dataType: "html"
+    });
+
+    request.done(function(msg) {
+        alert(msg)
+        $('#jsonAnswer').append(msg);
+
     });
         request.fail(function(jqXHR, textStatus) {
         alert( "Request failed: " + textStatus );
