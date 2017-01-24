@@ -1,6 +1,6 @@
 module.exports = function(app, router)
 {   
-    router.get("/costestimate",function(req,res){
+    router.get("/estimatecost",function(req,res){
       res.sendFile(path + "costestimate.html");
     });
     
