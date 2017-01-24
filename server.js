@@ -24,6 +24,11 @@ router.get("/eligiblecoverage",function(req,res){
   res.sendFile(path + "eligiblecoverage.html");
 });
 
+//tt
+router.get("/estimatecost",function(req,res){
+  res.sendFile(path + "costestimate.html");
+});
+
 router.get("/test",function(req,res){
   res.sendFile(path + "test.html");
 });
