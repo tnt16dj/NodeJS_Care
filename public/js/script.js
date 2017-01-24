@@ -2,9 +2,16 @@ $(window).load(function(){
 
     $('#jsonAnswer').empty();
 
-    alert(window.location.pathname);
+    switch(window.location.pathname) {
 
-    getCoverage(); 
+        case '/estimatecoverage':
+            getCoverage();
+
+        case '/costestimate':
+            getCostEstimate();
+
+    }
+    
 });
 
 
