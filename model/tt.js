@@ -1,5 +1,11 @@
-module.exports = function(app)
-{   var Eligible = require('eligible-node');
+module.exports = function(app, router)
+{   
+    router.get("/costestimate",function(req,res){
+      res.sendFile(path + "costestimate.html");
+    });
+    
+    //Eligible Logic
+    var Eligible = require('eligible-node');
 
 
     //or, pass them as object:

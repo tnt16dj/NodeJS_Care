@@ -4,14 +4,14 @@ $(window).load(function(){
 
     switch(window.location.pathname) {
 
-        case '/estimatecoverage':
+        case '/eligiblecoverage':
             getCoverage();
 
         case '/costestimate':
             getCostEstimate();
 
     }
-    
+
 });
 
 
