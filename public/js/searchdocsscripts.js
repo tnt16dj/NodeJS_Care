@@ -83,7 +83,7 @@ function searchdoc(site) {
             finaldiv = finaldiv + div
          }
          $("#docpanel").show();
-         $("#docpanel").append(finaldiv)
+         $("#docpanel").html(finaldiv)
          //$("#data").append(msg);
      });
      request.fail(function(jqXHR, textStatus) {
