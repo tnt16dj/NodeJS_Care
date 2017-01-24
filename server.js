@@ -33,6 +33,10 @@ router.get("/estimatecost",function(req,res){
   res.sendFile(path + "costestimate.html");
 });
 
+router.get("/makepayment",function(req,res){
+  res.sendFile(path + "makepayment.html");
+});
+
 router.get("/test",function(req,res){
   res.sendFile(path + "test.html");
 });
