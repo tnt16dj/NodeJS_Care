@@ -67,7 +67,7 @@ function getCostEstimate() {
     var request = $.ajax({
         url: '/CostEstimate',
         type: "GET",
-        dataType: "html"
+        dataType: "json"
     });
 
     request.done(function(msg) {
