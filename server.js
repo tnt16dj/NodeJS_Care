@@ -49,27 +49,6 @@ router.get("/index",function(req,res){
   res.sendFile(path + "index.html");
 });
 
-// include model/main
-require('./model/main')(app);
-require('./model/searchdocs')(app);
-require('./model/tt')(app,router);
-
-//require('./model/main')(app,router);
-
-app.use(express.static('public'))
-//app.use(express.static('public2'))
-app.use("/",router);
-
-app.use("*",function(req,res){
-  res.sendFile(path + "404.html");
-});
-
-var port = process.env.PORT || 3000;
-
-app.listen(port,function(){
-  console.log("Live at Port " + port);
-});
-
 app.post("/signup",urlencodedParser,function(req,res){
 	var fname = req.body.fname;
 	var lname= req.body.lname;
@@ -152,4 +131,25 @@ app.post("/login",urlencodedParser,function(req,res){
 	}
   
   res.sendFile(path + "index.html");
+});
+
+// include model/main
+require('./model/main')(app);
+require('./model/searchdocs')(app);
+require('./model/tt')(app,router);
+
+//require('./model/main')(app,router);
+
+app.use(express.static('public'))
+//app.use(express.static('public2'))
+app.use("/",router);
+
+app.use("*",function(req,res){
+  res.sendFile(path + "404.html");
+});
+
+var port = process.env.PORT || 3000;
+
+app.listen(port,function(){
+  console.log("Live at Port " + port);
 });
