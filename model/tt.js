@@ -30,7 +30,7 @@ module.exports = function(app)
         })
         .catch(function(e) {
           //
-          alert('error in coverage call');
+          console.log(e);
         });
         
     })
@@ -49,11 +49,11 @@ module.exports = function(app)
         })
         .then(function(costEstimates) {
           console.log(costEstimates);
-          res.sent(costEstimates);
+          res.send(costEstimates);
         })
         .catch(function(e) {
           //
-          alert('error in cost estimate call');
+          console.log(e);
         });
 
     })

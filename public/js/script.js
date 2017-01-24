@@ -71,7 +71,7 @@ function getCostEstimate() {
     });
 
     request.done(function(msg) {
-        alert(msg)
+        alert(msg);
         $('#jsonAnswer').append(msg);
 
     });
