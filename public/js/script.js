@@ -28,7 +28,7 @@ function getCoverage() {
         alert(msg)
         $('#jsonAnswer').append(msg);
 
-        // do something 
+        // do something
         var data = $.parseJSON($("#jsonAnswer").html());
         var coverage = new Coverage(data);
 
@@ -69,13 +69,18 @@ function getCostEstimate() {
     var request = $.ajax({
         url: '/CostEstimate',
         type: "GET",
-        dataType: "html"
+        dataType: "json"
     });
 
     request.done(function(msg) {
         //var returnedData = JSON.parse(msg);
-        
-        alert(msg);
+
+        alert(JSON.stringify(msg.cost_estimates[0]))
+        var provider_price = msg.cost_estimates[0].provider_price
+        var cost_estimate = msg.cost_estimates[0].cost_estimate
+        var service_type = msg.cost_estimates[0].cost_estimate_equation.deductible[0].service_type
+        alert("Provider Price: " + provider_price + "\nCost Estimate: " + cost_estimate + "\nService Type: " + service_type)
+        //alert(jsonobj.cost_estimates[0].cost_estimate)
         $('#jsonAnswer').append(msg);
 
     });
