@@ -1,8 +1,5 @@
-module.exports = function(app, router)
-{   
-    app.get("/estimatecost",function(req,res){
-      res.sendFile("./costestimate.html");
-    });
+module.exports = function(app)
+{
     
     //Eligible Logic
     var Eligible = require('eligible-node');
