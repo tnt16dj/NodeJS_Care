@@ -1,7 +1,7 @@
 module.exports = function(app, router)
 {   
     app.get("/estimatecost",function(req,res){
-      res.sendFile("costestimate.html");
+      res.sendFile("./costestimate.html");
     });
     
     //Eligible Logic
