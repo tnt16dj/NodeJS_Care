@@ -16,6 +16,10 @@ router.get("/searchdocs",function(req,res){
   res.sendFile(path + "searchdocs.html");
 });
 
+router.get("/searchdoctors",function(req,res){
+  res.sendFile(path + "searchdoctors.html");
+});
+
 router.get("/eligible",function(req,res){
   res.sendFile(path + "eligible.html");
 });
