@@ -10,6 +10,21 @@ module.exports = function(app)
   var stringify = require('node-stringify');
 
 
+function getPrices(zipcode,cptcode){
+      pokitdok.cashPrices({
+              zip_code: zipcode,
+              cpt_code: cptcode
+          }, function (err, res) {
+          if (err) {
+              return console.log(err, res.statusCode);
+          }
+          // print the cpt, geo_zip and average price
+
+              var price = res.data[0].average_price;
+              console.log(price);
+
+      });
+};
      app.get('/searchdoc',urlencodedParser,function(req,res){
         //cpt = req.query.cpt
         var zip = req.body.zip
