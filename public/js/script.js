@@ -67,14 +67,14 @@ function getCostEstimate() {
     var request = $.ajax({
         url: '/CostEstimate',
         type: "GET",
-        dataType: "json"
+        dataType: "html"
     });
 
     request.done(function(msg) {
-        var returnedData = JSON.parse(msg);
+        //var returnedData = JSON.parse(msg);
         
-        alert(returnedData);
-        $('#jsonAnswer').append(returnedData);
+        alert(msg);
+        $('#jsonAnswer').append(msg);
 
     });
         request.fail(function(jqXHR, textStatus) {
