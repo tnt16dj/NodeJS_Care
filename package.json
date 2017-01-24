@@ -13,6 +13,7 @@
     "express-basic-auth": "latest",
     "jsdom" : "latest",
     "jquery": "latest",
+    "jsonfile": "^2.4.0",
     "multer": "latest",
     "node-stringify": "0.0.19",
     "pokitdok-nodejs": "0.0.11"
