@@ -47,6 +47,7 @@ function searchdoc(site) {
     var zipform = $("#zip").val();
     var insurersform = $("#insurers").val();
     var cptform = $("#cpt").val();
+  
     var request = $.ajax({
         url: site,
         type: "POST",
@@ -83,7 +84,6 @@ function searchdoc(site) {
             finaldiv = finaldiv + div
          }
          $("#docpanel").show();
-         $("#docpanel").empty();
          $("#docpanel").html(finaldiv)
          getPrice(msg, zipform, cptform)
      });
