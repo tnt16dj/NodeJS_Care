@@ -11,6 +11,13 @@ body {
   font-family: 'Titillium Web', sans-serif;
 }
 
+img {
+  display:block;
+  width:500px;
+  margin-bottom: -85px;
+  margin-top: -85px;
+}
+
 a {
   text-decoration: none;
   color: #337ab7;
