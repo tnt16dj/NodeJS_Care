@@ -20,3 +20,8 @@
 #searchTools {
     padding-top:50px;
 }
+
+.cost_estimate {
+    float: right;
+    color: green;
+}
