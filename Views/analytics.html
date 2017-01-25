@@ -16,13 +16,9 @@
 
     <!-- Custom Fonts -->
     <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-    
 	
 	 <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Map CSS -->
-    <link href="css/map.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -47,9 +43,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a href="/index">
-                    <img border="0" alt="PNCCares" src="./assets/pnccareslogo.png" width=115>
-                </a>
+                <a class="navbar-brand" href="/index">PNCCare</a>
             </div>
             <!-- Top Menu Items -->
             <ul class="nav navbar-right top-nav">
@@ -156,7 +150,6 @@
                 </li>
             </ul>
             <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
-            <!-- Sidebar Menu Items - These collapse to the responsive navigation menu on small screens -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
@@ -197,17 +190,14 @@
                     <li>
                         <a href="/eligiblecoverage"><i class="fa fa-fw fa-check-square-o"></i> View Coverage</a>
                     </li>
-                    <li class='active'>
+                    <li>
                         <a href="/searchdoctors"><i class="fa fa-fw fa-search"></i> Find Providers</a>
                     </li>
-                    <!--li class="active">
+                    <!--<li>
                         <a href="/estimatecost"><i class="fa fa-fw fa-shopping-cart"></i> Estimate Costs</a>
                     </li>-->
-                    <li>
+                    <li class="active">
                         <a href="/makepayment"><i class="fa fa-fw fa-money"></i> Make Payments</a>
-                    </li>
-                    <li>
-                        <a href="/analytics"><i class="fa fa-fw fa-bar-chart-o"></i> Explore Analytics</a>
                     </li>
                 </ul>
             </div>
@@ -215,116 +205,13 @@
         </nav>
 
         <div id="page-wrapper">
-        	
-            <!-- begin template -->
-            <!--<div class="navbar navbar-custom navbar-fixed-top">
-            <div class="navbar-header"><a class="navbar-brand" href="#">Shop Providers</a>
-                <a class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </a>
-                </div>
-                <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li><a href="#">Link</a></li>
-                    <li>&nbsp;</li>
-                </ul>
 
-                <form class="navbar-form">
-                    <div class="form-group" style="display:inline;">
-                    <span class="input-group">
+            <div class="container-fluid" style="margin-top: 75px">
 
-                        <select id="insurers" class="form-control" placeholder = "Pick Insurer"> -->
-                                            <!--<label for="insurers">Pick Insurer</label>-->
-                <!--                            <option value = "aetna">Aetna</option>
-                            <option value = "highmark">Highmark</option>
-                        </select>
-                            </span>
-                        <span class="form-group-sm">
-                                        
-                                        <select class = "form-control" id = "cpt">
-                                        <option value="99201">Evaluation and Management</option>
-                                        <option value="00100">Anesthesia</option>
-                                        <option value="70010">Radiology</option>
-                                        <option value="80047">Pathology and Laboratory</option>
-                                        <option value="90281">Medicine</option>
-                                        </select>
-                        </span>
-                        <input type="text" id="zip" class="form-control" placeholder="Zipcode">
-                                    <button type="button" class="btn btn-default" onclick="searchdoc('\searchdoc')"><span class="glyphicon glyphicon-search"></span></button>
-                       
 
-                    </div>
-                </form>
-                </div>
-            </div>-->
 
-            <div class="container-fluid">
-                <div class="row">
-                    <form class="navbar-form" id="searchTools">
-                        <div class="form-group" style="display:inline;">
-                        <span class="form-group-sm">
-                                <select id="insurers" class="form-control" placeholder = "Pick Insurer"> -->
-                                    <!--<label for="insurers">Pick Insurer</label>-->
-                                    <option value = "aetna">Aetna</option>
-                                    <option value = "highmark">Highmark</option>
-                                </select>
-                        </span>
-                        <span class="form-group-sm">
-                                <select class = "form-control" id = "cpt">
-                                    <option value="99201">Evaluation and Management</option>
-                                    <option value="00100">Anesthesia</option>
-                                    <option value="70010">Radiology</option>
-                                    <option value="80047">Pathology and Laboratory</option>
-                                    <option value="90281">Medicine</option>
-                                </select>
-                        </span>
-
-                        <input type="text" id="zip" class="form-control" placeholder="Zipcode">
-                        <button type="button" class="btn btn-default" onclick="searchdoc('\searchdoc')"><span class="glyphicon glyphicon-search"></span></button>
-
-                        </div>
-                    </form>
-                </div>
-                <div class="row">
-                    <div class="col-lg-8" id="searchRes">
-
-                        <h2>View Providers</h2>
-
-                        <!-- item list -->
-                        <div class="panel panel-default" id = "docpanel">
-                            <div class="panel-heading" id="name"></div>
-                                    <div class="panel-body">
-                                        <div id="specialty">Specialty Here</div>
-                                        <div id="phone">Phone Here</div>
-                                        <div id="website">Website Here</div>
-                                        <div id="degree">Degree Here</div>
-                                        <p id = "description"></p>
-                                    </div>
-                        </div>
-                        <!--  <p id="data">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis pharetra varius quam sit amet vulputate.
-                            Quisque mauris augue, molestie tincidunt condimentum vitae, gravida a libero. Aenean sit amet felis
-                            dolor, in sagittis nisi. Sed ac orci quis tortor imperdiet venenatis. Duis elementum auctor accumsan.
-                            Aliquam in felis sit amet augue.</p>
-                            -->
-
-                        <hr>
-
-                    </div>
-
-                    <div class="col-lg-4" id='map'><!--map-canvas will be postioned here-->
-                        <div id="map-canvas"></div>
-                    </div>
-
-                </div>
             </div>
-
-
-        </div>
-        <!-- end template -->
+            <!-- /.container -->
 
         </div>
         <!-- /#page-wrapper -->
@@ -332,11 +219,12 @@
     </div>
     <!-- /#wrapper -->
 
-    <!-- script references -->
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
     <script src="js/bootstrap.min.js"></script>
-    <script src="http://maps.googleapis.com/maps/api/js?key=AIzaSyC8Shjrx_lysyOitfIwTzuWfQuAhAdnAUk&sensor=false&extension=.js&output=embed"></script>
-    <script src="js/searchdocsscripts.js"></script>
 
 </body>
 
