@@ -83,7 +83,7 @@ function searchdoc(site) {
             finaldiv = finaldiv + div
          }
          $("#docpanel").show();
-         $("#docpanel").html(finaldiv)
+         $("#docpanel").replaceWith(finaldiv)
          getPrice(msg, zipform, cptform)
      });
      request.fail(function(jqXHR, textStatus) {
