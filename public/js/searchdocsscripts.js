@@ -49,7 +49,7 @@ function searchdoc(site) {
     var cptform = $("#cpt").val();
     var request = $.ajax({
         url: site,
-        type: "GET",
+        type: "POST",
         data: { zip: zipform, insurers: insurersform, cpt: cptform},
         dataType: "json"
     });
@@ -68,7 +68,7 @@ function searchdoc(site) {
        var finaldiv = ""
          for (i = 0, ilen = nmsg.docs.length; i<ilen; i++){
            console.log(ilen)
-            var div = makeDiv(nmsg.docs[i],$("#docpanel"))
+            var div = makeDiv(nmsg.docs[i],$("#docpanel"), i)
 
             //map stuff
             markmap(latlongs[i].lat, latlongs[i].long, map)
@@ -84,16 +84,67 @@ function searchdoc(site) {
          }
          $("#docpanel").show();
          $("#docpanel").html(finaldiv)
-         //$("#data").append(msg);
+         getPrice(msg, zipform, cptform)
      });
      request.fail(function(jqXHR, textStatus) {
   alert( "Request failed: " + textStatus );
 });
 }
 
-function makeDiv(obj,div){
+function getPrice(jsonarray, zipform, cptform){
+    console.log("ingetprice")
+    var request = $.ajax({
+    url: "/providerAvgPrice",
+    type: "POST",
+    data: { obj: jsonarray, zip: zipform, cpt: cptform},
+    dataType: "json"
+    });request.done(function(msg) {
+       console.log(msg)
+       getEstimate(msg,msg.price);
+
+
+     });
+     request.fail(function(jqXHR, textStatus) {
+    alert( "Request failed: " + textStatus );
+    });
+
+}
+function getEstimate(jsonarray, price){
+    console.log("ingetestimate")
+    console.log(jsonarray)
+    console.log(JSON.parse(jsonarray.data))
+    jsonarray2 = JSON.parse(jsonarray.data)
+    var price = jsonarray.price
+    var costestimatenid = []
+    for(var i=0, ilen=jsonarray2.docs.length; i < ilen; i++){
+    var request = $.ajax({
+    url: "/getEstimate",
+    type: "POST",
+    data: {avgprice: price, index: jsonarray2.docs[i].npi},
+    dataType: "json"
+    });request.done(function(msg) {
+       var nmsg = msg;
+       console.log(nmsg)
+       var npi = msg.index
+       var cost_estimate = msg.cost_estimate
+       for (j=0; j<5; j++){
+         if ($('#'+j ).html() == ""){
+           newcost = cost_estimate + j
+       $('#'+j ).html("$" + newcost + ".00")
+          }
+        }
+       //console.lmsg)
+     });
+   }
+     request.fail(function(jqXHR, textStatus) {
+    alert( "Request failed: " + textStatus );
+    });
+
+}
+
+function makeDiv(obj,div, i){
   var $ajaxForm = $(div)
-  $("#name", $ajaxForm).html(obj.first_name + ' ' + obj.last_name)
+  $("#name", $ajaxForm).html(obj.first_name + ' ' + obj.last_name + '<span class="cost_estimate" id = \"' +i +'\"></span>')
   $("#specialty", $ajaxForm).html(obj.specialty)
   $("#phone", $ajaxForm).html(obj.phone)
   $("#website", $ajaxForm).html(obj.website)
