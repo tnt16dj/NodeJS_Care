@@ -41,6 +41,10 @@ router.get("/makepayment",function(req,res){
   res.sendFile(path + "makepayment.html");
 });
 
+router.get("/analytics",function(req,res){
+  res.sendFile(path + "analytics.html");
+});
+
 router.get("/test",function(req,res){
   res.sendFile(path + "test.html");
 });
