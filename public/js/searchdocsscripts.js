@@ -83,7 +83,8 @@ function searchdoc(site) {
             finaldiv = finaldiv + div
          }
          $("#docpanel").show();
-         $("#docpanel").replaceWith(finaldiv)
+         $("#docpanel").empty();
+         $("#docpanel").html(finaldiv)
          getPrice(msg, zipform, cptform)
      });
      request.fail(function(jqXHR, textStatus) {
@@ -144,8 +145,9 @@ function getEstimate(jsonarray, price){
 
 function makeDiv(obj,div, i){
   var $ajaxForm = $(div)
+  var directions = 'https://www.google.com/maps/dir/Presto,+PA+15142/One+PNC+Plaza,+Fifth+Avenue,+Pittsburgh,+PA/@40.4139288,-80.0947609,13z/am=t/data=!4m14!4m13!1m5!1m1!1s0x88345817060792ff:0xe91018e978c1ef85!2m2!1d-80.1177335!2d40.3863715!1m5!1m1!1s0x8834f156e2bfacd5:0xfd479dd7cd90a46f!2m2!1d-80.000496!2d40.4412198!5i1'
   $("#name", $ajaxForm).html(obj.first_name + ' ' + obj.last_name + '<span class="cost_estimate" id = \"' +i +'\"></span>')
-  $("#specialty", $ajaxForm).html(obj.specialty)
+  $("#specialty", $ajaxForm).html(obj.specialty + '<span class="cost_estimate"><a href=\"'+directions+'\">directions</a></span>')
   $("#phone", $ajaxForm).html(obj.phone)
   $("#website", $ajaxForm).html(obj.website)
   $("#degree", $ajaxForm).html(obj.degree)
