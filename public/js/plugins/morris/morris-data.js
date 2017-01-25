@@ -68,14 +68,14 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "Download Sales",
-            value: 12
+            label: "Primary Care",
+            value: 45
         }, {
-            label: "In-Store Sales",
+            label: "Pharmacy",
             value: 30
         }, {
-            label: "Mail-Order Sales",
-            value: 20
+            label: "Hospital",
+            value: 25
         }],
         resize: true
     });
